@@ -1,6 +1,6 @@
 #Bloco 2 - Git, GitHub e Internet
 
-##Git & GitHub - Entendendo os comandos
+##Git & GitHub - Entendendo os comandos.
 
 - [X] Copiar um repositorio ja existente no GitHub para o seu computador;
 - [X] Abrir Pull Requests;
