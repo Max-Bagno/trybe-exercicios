@@ -22,3 +22,17 @@ nav {
     display: inline-block;
     margin: 30px;
 }
+
+#punch {
+    
+    display: inline-block;
+}
+
+#video {
+    display: inline-block;
+    border-style: solid;
+    background-color: beige;
+    border-width: 2px;
+    float: right;
+    min-width: 200px;
+}
