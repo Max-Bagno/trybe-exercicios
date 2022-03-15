@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+        section {
+            border-color: black;
+            border-style: solid;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: yellow;
+        }
+
+        .main-content .center-content {
+            background-color: red;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content .center-content p {
+            font-style: italic;
+        }
+
+        .main-content .left-content {
+            background-color: green;
+            width: 60%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .main-content .left-content .small-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+        }
+
+        .main-content .right-content {
+            background-color: blue;
+            width: 60%;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .main-content .description {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const containerBody = document.getElementsByTagName('body')[0];
+
+        // ex 1
+        let titulo = document.createElement('h1');
+        titulo.innerText = 'Exercício 5.2 - JavaScript DOM';
+        containerBody.appendChild(titulo);
+
+        // ex 2
+        let mainTag = document.createElement('main');
+        mainTag.className = 'main-content';
+        containerBody.appendChild(mainTag);
+
+        // ex 3
+        let sectionTag1 = document.createElement('section');
+        sectionTag1.className = 'center-content';
+        mainTag.appendChild(sectionTag1);
+
+        // ex 4
+        let paragraphTag = document.createElement('p');
+        paragraphTag.innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        sectionTag1.appendChild(paragraphTag);
+
+        // ex 5
+        let sectionTag2 = document.createElement('section');
+        sectionTag2.className = 'left-content';
+        mainTag.appendChild(sectionTag2);
+
+        // ex 6
+        let sectionTag3 = document.createElement('section');
+        sectionTag3.className = 'right-content';
+        mainTag.appendChild(sectionTag3);
+
+        // ex 7
+        let image = document.createElement('img');
+        image.className = 'small-image';
+        image.src = 'https://picsum.photos/200';
+        sectionTag2.appendChild(image);
+
+        // ex 8
+        let listToBe = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let listElement = document.createElement('ul');
+        sectionTag3.appendChild(listElement);
+
+        for (let item of listToBe) {
+            let listItem = document.createElement('li');
+            listItem.innerText = item;
+            listElement.appendChild(listItem);
+        }
+
+        // ex 9
+        for (let i = 0; i < 3; i += 1) {
+            let secondTitle = document.createElement('h3')
+            mainTag.appendChild(secondTitle)
+        }
+
+    </script>
+</body>
+
+</html>
