@@ -114,6 +114,33 @@
             mainTag.appendChild(secondTitle)
         }
 
+    //  ------------------------------------------------- //
+
+        // ex 1
+        titulo.className = 'title';
+
+        // ex 2
+        let underTitles = document.getElementsByTagName('h3');
+        for (let item of underTitles) {
+            item.className = 'description';
+        }
+
+        // ex 3
+        mainTag.removeChild(sectionTag2);
+
+        // ex 4
+        sectionTag3.style.marginRight = 'auto';
+
+        // ex 5
+        let toChangeBg = sectionTag1.parentNode;
+        toChangeBg.style.backgroundColor = 'green';
+       
+        // ex 6
+        let select = document.getElementsByTagName('ul')[0];
+    
+        for (let i = 0; i < 2; i += 1) {
+        select.removeChild(select.lastChild);
+        }
     </script>
 </body>
 
