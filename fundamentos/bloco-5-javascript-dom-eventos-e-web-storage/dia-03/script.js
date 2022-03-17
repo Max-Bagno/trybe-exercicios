@@ -71,13 +71,23 @@ createButton(btnName);
 let btn = document.getElementById('btn-holiday');
 let feriados = document.getElementsByClassName('holiday');
 
-function setHolidayColor(event) {
+function setHolidayColor() {
     for (let i = 0; i < feriados.length; i += 1) {
         const eachHoliday = feriados[i];
         eachHoliday.style.backgroundColor = '#F283B6';
-        // event.target.style.backgroundColor = 'rgb(238,238,238)'
     }
+    btn.removeEventListener('click', setHolidayColor)
+    btn.addEventListener('click', backHolidayColor)
 }
+function backHolidayColor() {
+    for (let i = 0; i < feriados.length; i += 1) {
+        const eachHoliday = feriados[i];
+        eachHoliday.style.backgroundColor = '';
+    }
+    btn.removeEventListener('click', backHolidayColor)
+    btn.addEventListener('click', setHolidayColor)
+}
+btn.addEventListener('click', backHolidayColor)
 btn.addEventListener('click', setHolidayColor)
 
 
@@ -99,11 +109,33 @@ let fridayDays = document.getElementsByClassName('friday');
 function setFriday() {
     for (let i = 0; i < fridayDays.length; i += 1) {
         const eachFriday = fridayDays[i];
-        eachFriday.innerText = 'SEXTOU!';
+        // eachFriday.innerText = 'SEXTOU!';
         eachFriday.style.color = '#15616D';
     }
+    btn2.removeEventListener('click', setFriday);
+    btn2.addEventListener('click', removeFriday);
 }
+
+function removeFriday() {
+    for (let i = 0; i < fridayDays.length; i += 1) {
+        const eachFriday = fridayDays[i];
+        // eachFriday.innerText = fridayDays[i].innerText;
+        eachFriday.style.color = '';
+    }
+    btn2.removeEventListener('click', removeFriday);
+    btn2.addEventListener('click', setFriday);
+}
+
+btn2.addEventListener('click', removeFriday);
 btn2.addEventListener('click', setFriday);
+
+
+
+
+
+
+
+// btn2.addEventListener('click', setFriday);
 
 
 
